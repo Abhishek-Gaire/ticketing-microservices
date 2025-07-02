@@ -13,8 +13,7 @@ export const errorHandler = (
     })
     return;
   }
-
-
+  
   res.status(500).send({
     errors: [{
       message: "Internal Server Error"

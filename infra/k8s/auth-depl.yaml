@@ -13,13 +13,19 @@ spec:
         app: auth
     spec:
       containers:
-        - name : auth
+        - name: auth
           image: abhishekgaire/auth
           ports:
             - containerPort: 3000
+          env:
+            - name: JWT_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: jwt-secret
+                  key: JWT_KEY
 ---
 apiVersion: v1
-kind : Service
+kind: Service
 metadata:
   name: auth-srv
 spec:
