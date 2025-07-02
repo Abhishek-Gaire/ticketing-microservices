@@ -1,9 +1,13 @@
-import express from "express";
+import { Router } from "express";
 
-const router = express.Router();
+const router: Router = Router();
 
-router.post("/api/users/signout", (req,res) => {
-  res.send("Current user");
-})
+router.post("/api/users/signout", (req, res) => {
+  // Clear the JWT from the session
+  req.session = null;
 
-export {router as signoutRouter}
+  res.send({});
+  return;
+});
+
+export { router as signoutRouter };
