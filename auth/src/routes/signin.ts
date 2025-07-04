@@ -1,11 +1,9 @@
 import { Request, Response, Router } from "express";
 import { body } from "express-validator";
 import jwt from "jsonwebtoken";
-
-import { validateRequest } from "../middlewares/validate-request";
+import { validateRequest, BadRequestError } from "@mcrosrvtickets/common";
 
 import { User } from "../models/user";
-import { BadRequestError } from "../errors/bad-request-error";
 import { Password } from "../services/password";
 
 const router = Router();
