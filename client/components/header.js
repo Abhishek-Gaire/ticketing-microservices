@@ -11,7 +11,7 @@ const Header = ({ currentUser }) => {
       return (
         <li className="nav-item" key={href}>
           <Link href={href} className="nav-link">
-            <a>{label}</a>
+            {label}
           </Link>
         </li>
       );
@@ -19,7 +19,7 @@ const Header = ({ currentUser }) => {
   return (
     <nav className="navbar navbar-light bg-light">
       <Link href={"/"} className="navbar-brand">
-        <a>GitTix</a>
+        GitTix
       </Link>
 
       <div className="d-flex justify-content-end">
